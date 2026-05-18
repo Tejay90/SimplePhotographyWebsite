@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LENS — Photography</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">LENS</div>
+    <ul class="nav__links">
+      <li><a href="#" class="nav__link active" data-page="portfolio">Portfolio</a></li>
+      <li><a href="#" class="nav__link" data-page="landscape">Landscape</a></li>
+      <li><a href="#" class="nav__link" data-page="contact">Contact</a></li>
+      <li><a href="#" class="nav__link" data-page="impressum">Impressum</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#" class="mobile-link" data-page="portfolio">Portfolio</a></li>
+      <li><a href="#" class="mobile-link" data-page="landscape">Landscape</a></li>
+      <li><a href="#" class="mobile-link" data-page="contact">Contact</a></li>
+      <li><a href="#" class="mobile-link" data-page="impressum">Impressum</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE: PORTFOLIO -->
+  <section class="page active" id="page-portfolio">
+    <div class="hero">
+      <div class="hero__text">
+        <p class="hero__label">Est. 2019</p>
+        <h1 class="hero__title">The world<br/><em>as I see it</em></h1>
+        <p class="hero__sub">Documentary · Portrait · Landscape · Architecture</p>
+        <button class="btn" data-page="landscape">Explore Work</button>
+      </div>
+      <div class="hero__image-frame">
+        <div class="hero__img hero__img--1"></div>
+        <div class="hero__img hero__img--2"></div>
+      </div>
+    </div>
+
+    <div class="section-label">— Selected Works</div>
+
+    <div class="portfolio-grid">
+      <!-- Portrait: woman in golden light — photo by Mateus Campos Felipe -->
+      <div class="portfolio-item portfolio-item--tall" data-category="Portrait">
+        <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80')"></div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat">Portrait</span>
+          <h3>Golden Hour</h3>
+        </div>
+      </div>
+      <!-- Landscape: alpine peaks — photo by Kalen Emsley -->
+      <div class="portfolio-item" data-category="Landscape">
+        <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80')"></div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat">Landscape</span>
+          <h3>Mountain Silence</h3>
+        </div>
+      </div>
+      <!-- Architecture: glass building facade — photo by Joshua Fuller -->
+      <div class="portfolio-item" data-category="Architecture">
+        <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80')"></div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat">Architecture</span>
+          <h3>Urban Lines</h3>
+        </div>
+      </div>
+      <!-- Documentary: wildflower field — photo by Dawid Zawila -->
+      <div class="portfolio-item portfolio-item--wide" data-category="Documentary">
+        <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=1200&q=80')"></div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat">Documentary</span>
+          <h3>Field of Light</h3>
+        </div>
+      </div>
+      <!-- Portrait: man close-up — photo by Albert Dera -->
+      <div class="portfolio-item portfolio-item--tall" data-category="Portrait">
+        <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&q=80')"></div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat">Portrait</span>
+          <h3>The Gaze</h3>
+        </div>
+      </div>
+      <!-- Landscape: aerial green hills — photo by Tom Barrett -->
+      <div class="portfolio-item" data-category="Landscape">
+        <div class="portfolio-img" style="background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80')"></div>
+        <div class="portfolio-overlay">
+          <span class="portfolio-cat">Landscape</span>
+          <h3>Aerial Serenity</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox__close" id="lightboxClose">✕</button>
+      <div class="lightbox__inner">
+        <img class="lightbox__img" id="lightboxImg" src="" alt=""/>
+        <div class="lightbox__info">
+          <span class="lightbox__cat" id="lightboxCat"></span>
+          <h3 class="lightbox__title" id="lightboxTitle"></h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: LANDSCAPE -->
+  <section class="page" id="page-landscape">
+    <div class="page-header">
+      <p class="page-header__label">— Collection</p>
+      <h2 class="page-header__title">Landscape<br/><em>Photography</em></h2>
+      <p class="page-header__desc">A study of light, terrain, and the quiet drama of the natural world. Each frame captured in the early hours when the earth holds its breath.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="mountains">Mountains</button>
+      <button class="filter-btn" data-filter="water">Water</button>
+      <button class="filter-btn" data-filter="forests">Forests</button>
+      <button class="filter-btn" data-filter="desert">Desert</button>
+    </div>
+
+    <div class="landscape-grid">
+      <!-- Mountains: rocky alpine peaks — photo by Kalen Emsley -->
+      <div class="ls-item" data-tag="mountains">
+        <div class="ls-img" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80')"></div>
+        <div class="ls-caption"><span>Alps at Dawn</span><em>Mountains · Switzerland</em></div>
+      </div>
+      <!-- Water: calm fjord mirror — photo by Simon Matzinger -->
+      <div class="ls-item" data-tag="water">
+        <div class="ls-img" style="background-image: url('https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=900&q=80')"></div>
+        <div class="ls-caption"><span>Still Waters</span><em>Water · Norway</em></div>
+      </div>
+      <!-- Mountains wide: dramatic peaks — photo by Luca Bravo -->
+      <div class="ls-item ls-item--wide" data-tag="mountains">
+        <div class="ls-img" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80')"></div>
+        <div class="ls-caption"><span>Infinite Peaks</span><em>Mountains · Dolomites</em></div>
+      </div>
+      <!-- Forests: light rays through trees — photo by Sebastian Unrau -->
+      <div class="ls-item" data-tag="forests">
+        <div class="ls-img" style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=900&q=80')"></div>
+        <div class="ls-caption"><span>Cathedral Light</span><em>Forests · Oregon</em></div>
+      </div>
+      <!-- Desert: rolling sand dunes — photo by Luca Zanon -->
+      <div class="ls-item" data-tag="desert">
+        <div class="ls-img" style="background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=900&q=80')"></div>
+        <div class="ls-caption"><span>Sand & Shadow</span><em>Desert · Sahara</em></div>
+      </div>
+      <!-- Water: crashing ocean wave — photo by Oliver Schwendener -->
+      <div class="ls-item" data-tag="water">
+        <div class="ls-img" style="background-image: url('https://images.unsplash.com/photo-1505459668311-8dfac7952bf0?w=900&q=80')"></div>
+        <div class="ls-caption"><span>Ocean Breath</span><em>Water · Iceland</em></div>
+      </div>
+      <!-- Forests tall: bamboo forest path — photo by kazuend -->
+      <div class="ls-item ls-item--tall" data-tag="forests">
+        <div class="ls-img" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=900&q=80')"></div>
+        <div class="ls-caption"><span>Misty Canopy</span><em>Forests · Japan</em></div>
+      </div>
+      <!-- Desert: aerial canyon road — photo by Blake Verdoorn -->
+      <div class="ls-item" data-tag="desert">
+        <div class="ls-img" style="background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=900&q=80')"></div>
+        <div class="ls-caption"><span>Dusk Voyage</span><em>Desert · Utah</em></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: CONTACT -->
+  <section class="page" id="page-contact">
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p class="page-header__label">— Get in Touch</p>
+        <h2 class="contact-title">Let's create<br/><em>something</em><br/>together.</h2>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="contact-detail__label">Email</span>
+            <a href="mailto:hello@lens-photo.com" class="contact-detail__val">hello@lens-photo.com</a>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Phone</span>
+            <a href="tel:+491234567890" class="contact-detail__val">+49 123 456 7890</a>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Location</span>
+            <span class="contact-detail__val">Berlin, Germany</span>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Instagram</span>
+            <a href="#" class="contact-detail__val">@lens.photo</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a topic…</option>
+              <option>Portrait Session</option>
+              <option>Landscape Print</option>
+              <option>Commercial Project</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--full">Send Message</button>
+          <div class="form-success" id="formSuccess">
+            ✓ Message sent! I'll be in touch soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE: IMPRESSUM -->
+  <section class="page" id="page-impressum">
+    <div class="impressum-wrap">
+      <div class="impressum-header">
+        <p class="page-header__label">— Legal Notice</p>
+        <h2 class="impressum-title">Impressum</h2>
+      </div>
+      <div class="impressum-body">
+        <div class="impressum-block">
+          <h3>Information according to § 5 TMG</h3>
+          <p>Max Mustermann<br/>
+          Musterstraße 12<br/>
+          10115 Berlin<br/>
+          Germany</p>
+        </div>
+        <div class="impressum-block">
+          <h3>Contact</h3>
+          <p>Phone: +49 123 456 7890<br/>
+          Email: <a href="mailto:hello@lens-photo.com">hello@lens-photo.com</a></p>
+        </div>
+        <div class="impressum-block">
+          <h3>Tax Information</h3>
+          <p>Sales tax ID according to §27a UStG:<br/>
+          DE 123 456 789</p>
+        </div>
+        <div class="impressum-block">
+          <h3>Responsible for Content</h3>
+          <p>Max Mustermann<br/>
+          Musterstraße 12<br/>
+          10115 Berlin</p>
+        </div>
+        <div class="impressum-block">
+          <h3>Dispute Resolution</h3>
+          <p>The European Commission provides a platform for online dispute resolution (ODR): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. We are not obligated to participate in dispute resolution proceedings before a consumer arbitration board and do not generally participate in such proceedings.</p>
+        </div>
+        <div class="impressum-block">
+          <h3>Liability for Content</h3>
+          <p>As a service provider, we are responsible for our own content on these pages in accordance with general law pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p>
+        </div>
+        <div class="impressum-block">
+          <h3>Copyright</h3>
+          <p>The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution or any form of commercialisation of such material beyond the scope of the copyright law requires the prior written consent of its respective author or creator.</p>
+        </div>
+        <div class="impressum-block">
+          <h3>Privacy Policy</h3>
+          <p>The use of our website is generally possible without providing personal data. Insofar as personal data (e.g. name, address or email addresses) is collected on our pages, this is always done on a voluntary basis as far as possible. This data will not be passed on to third parties without your explicit consent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2026 LENS Photography — All rights reserved.</span>
+    <a href="#" class="nav__link" data-page="impressum">Impressum</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
