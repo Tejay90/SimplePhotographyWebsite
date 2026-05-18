@@ -1,1 +1,1 @@
-# PhotographyWebsite
+# SimplePhotographyWebsite
